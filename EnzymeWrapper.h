@@ -57,7 +57,7 @@ double elasticEnergyWrapper(
 }
 
 template<class SFF>
-double grad_elasticEnergyWrapper(
+void grad_elasticEnergyWrapper(
             const MeshConnectivity* mesh,
             int nverts,
             const double *curPos,
@@ -118,7 +118,9 @@ double elasticEnergyEnzyme(
         }
         
         delete[] rawCurPos;
+        delete[] drawCurPos;
         delete[] rawEdgeDOFs;
+        delete[] drawEdgeDOFs;
     }
     return energy;
 }
